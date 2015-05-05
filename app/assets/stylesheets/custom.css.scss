@@ -68,7 +68,7 @@ $navbar-default-color: $light-orange;
 
 body{
   padding-top:80px;
-  background-image: url("seat_bg.jpg");
+  background-image: url(asset-path('seat_bg.jpg'));
   width:auto;
 }
 
