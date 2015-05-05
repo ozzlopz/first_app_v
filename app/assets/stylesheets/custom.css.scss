@@ -1,0 +1,158 @@
+$navbar-default-bg: #5a6168;
+$light-orange: #5a6168;
+$navbar-default-color: $light-orange;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.start_image{
+  width:15px;
+  border-radius:200px;
+}
+
+.topmargin{
+  margin-top:50px;
+}
+
+.topborder{
+  border-top: 2px solid #c8282c;
+}
+
+.btn-icon {
+  background: #dcdee0;
+  background-image: -webkit-linear-gradient(top, #dcdee0, #f0edf0);
+  background-image: -moz-linear-gradient(top, #dcdee0, #f0edf0);
+  background-image: -ms-linear-gradient(top, #dcdee0, #f0edf0);
+  background-image: -o-linear-gradient(top, #dcdee0, #f0edf0);
+  background-image: linear-gradient(to bottom, #dcdee0, #f0edf0);
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #c8282c;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn-icon:hover {
+  background: #c8282c;
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #fc3c3c, #ff0000);
+  background-image: -moz-linear-gradient(top, #fc3c3c, #ff0000);
+  background-image: -ms-linear-gradient(top, #fc3c3c, #ff0000);
+  background-image: -o-linear-gradient(top, #fc3c3c, #ff0000);
+  background-image: linear-gradient(to bottom, #fc3c3c, #ff0000);
+  text-decoration: none;
+}
+#logo{
+  margin-top:10px;
+  margin-bottom:10px;
+  float:left;
+  margin-right:10px;
+  font-size:2em;
+  color:#c8282c;
+  
+  letter-spacing:-1px;
+  padding-top:9px;
+  font-weight:bold;
+}
+
+#logo:hover{
+  color:white;
+  text-decoration:none;
+}
+
+body{
+  padding-top:80px;
+  background-image: url("seat_bg.jpg");
+  width:auto;
+}
+
+.nav_item{
+  margin-left:25px;
+  float:left;
+  margin-top:20px;
+}
+
+.nav_ul_item{
+  margin-left:25px;
+  float:left;
+  margin-top:20px;
+  padding-left:0;
+}
+
+.center{
+  text-align:center;
+}
+
+h1,h2,h3,h4{
+  line-height:1;
+}
+
+h1{
+  font-size:3em;
+  letter-spacing:-2px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+h2{
+  font-size:1.2em;
+  margin-bottom:30px;
+  text-align: center;
+  font-weight:normal;
+  column-rule: #777;
+}
+
+.left{
+  text-align:left;
+  letter-spacing: 0.5px;
+}
+
+.footer{
+  margin-top:25px;
+  border-top:1px solid #eaeaea;
+  color: #777;
+}
+
+.chef_info{
+  margin-top:10px;
+}
+
+.gravatar{
+  border-radius:10px;
+}
+
+.well{
+  background-color:#ededed;
+}
+
+input,textarea,select, .uneditable-input{
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width:100%;
+  margin-bottom:15px;
+}
+
+.input_checkbox input{
+  width: auto !important;
+}
+
+input{
+  height: auto !important;
+}
+
+span.picture{
+  margin-top:10px;
+  input {
+    border: 0;
+  }
+}
+
+.show_recipe{
+  margin: 10px 10px 10px 10px;
+}

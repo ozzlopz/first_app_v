@@ -1,0 +1,39 @@
+<div class="center jumbotron ">
+  <h1>Bienvenido al sitio de la app <br>SEAT Pachuca</h1>
+</div>
+  <div class="row">
+
+    
+     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center">
+  
+      <%= image_tag("vivelaemocion.jpg", size:"400x250") %>
+    
+    </div>
+    
+     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center well">
+     <h2>Aquí podrás administrar el contenido de la app Seat Pachuca, publicar nuevas ofertas, eliminar o editar ofertas ya publicadas así como acceder al servicio de Push Notifications.</h2>
+    </div>
+ 
+</div>
+ 
+<div class="row topmargin topborder">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center">
+    <h3 class="mldrow">
+      Ingresa
+    </h3>
+    <h2 class="center">
+      Inicia sesión con tu usuario y contraseña para poder acceder a las opciones de gestión de la aplicación.
+    </h2>
+    <p><%= link_to "Iniciar sesión","",class:"btn btn-danger btn-small"%></p>
+  </div>
+  
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center">
+    <h3 class="mldrow">
+      Ver ofertas
+    </h3>
+    <h2 class="center">
+      Ver las ofertas que actualmente están publicadas en la aplicación. No podrás gestionarlas a menos que inicies sesión.
+    </h2>
+    <p><%= link_to "Ver ofertas","",class:"btn btn-danger btn-small"%></p>
+  </div>
+</div>

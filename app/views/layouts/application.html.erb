@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>SEAT Pachuca</title>
+  <link rel="shortcut icon" href="assets/favicon.ico"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ 
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<%= render 'layouts/navigation' %>
+<div class="container">
+  
+  <%= render 'layouts/messages'%>
+  
+  <%= yield %>
+  
+  <%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
