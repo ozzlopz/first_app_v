@@ -1,0 +1,33 @@
+<%= render 'shared/page_title', title: @offer.name %> 
+<%= render 'shared/errors', obj: @offer %>
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= link_to image_tag("seatLogo.png", size:"200x200",class:"gravatar"), user_path(@offer.user)  %>
+    <p>
+      <h5 class="username_red">Publicada por: <%=@offer.user.username %></h5>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <% if logged_in? and (@offer.user == current_user || current_user.admin?) %>
+     <%= link_to "Editar esta oferta",edit_offer_path(@offer), class: "btn btn-success pull-right" %>
+    <% end %>
+    
+    <% if logged_in? and current_user.admin? %>
+      <%= link_to "[Eliminar oferta]", @offer, method: :delete, data: {confirm: "¿Estás seguro?"} %>
+    <% end %>
+    
+    <h3>
+      <%= @offer.summary %>
+    </h3>
+     <div class="show_recipe">
+      <%= image_tag(@offer.picture.url,class:"gravatar") if @offer.picture? %>
+    </div>
+    <div class="well">
+      <strong>Steps: </strong>
+      </p>
+      <%= simple_format(@offer.description) %>
+    </div>
+  </div>
+</div>
+
+<h5><%= link_to "Regresar a la Lista de Ofertas", offers_path, class:"btn btn-danger btn-small" %></h5>

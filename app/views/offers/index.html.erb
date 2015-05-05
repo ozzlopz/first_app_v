@@ -1,0 +1,46 @@
+<%= render 'shared/page_title', title: "Todas las ofertas" %> 
+
+<ul class="nav nav-tabs">
+  <li class='active'>
+    <%= link_to "Ofertas", offers_path %>
+  </li>
+  <li>
+    <%= link_to "Usuarios", users_path %>
+  </li>
+</ul>
+
+<%= will_paginate %>
+
+<% @offers.each do |offer| %>
+  <div class="row">
+      <div class="col-md-2">
+        <section class="chef_info center">
+           <%= image_tag("seatLogo.png", size:"100x100") %>
+          <h5 class= "username_red">Usuario: <%= offer.user.username %></h5>
+        </section>
+      </div>
+      
+      <div class="col-lg-6 well">
+         <h4><%= link_to offer.name, offer_path(offer) %></h4>
+         <p><%= offer.summary %></p>
+         
+           <span class = "quiet">
+             <small>
+              creado: <%=time_ago_in_words(offer.created_at)%>, 
+             </small>
+           </span>
+           <span class = "quiet">
+             <small>
+                editado: <%= time_ago_in_words(offer.updated_at)%>
+             </small>
+           </span>
+         </p>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag(recipe.picture.url,size: "250x150",class: "gravatar") if offer.picture? %>
+      </div>
+  </div>
+  <hr/>
+<% end %>
+
+<%= will_paginate %>

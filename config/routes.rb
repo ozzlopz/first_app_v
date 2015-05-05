@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     
     get '/home', to: 'pages#home'
 
- 
+    resources :offers
+    
+    resources :users, except: [:new, :destroy]
 end

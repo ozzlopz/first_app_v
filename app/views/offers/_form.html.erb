@@ -1,0 +1,30 @@
+<%= render 'shared/errors', obj: @offer %>
+<div class="row">
+    <div class="well  col-md-8 col-md-offset-2">
+      <%= form_for(@offer,html: { multipart: true }) do |f| %>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+      
+       <%= f.label :resumen %>
+      <%= f.text_field :summary %>
+      
+       <%= f.label :descripción %>
+      <%= f.text_area :description, rows: 10 %>
+      
+      <span class="picture">
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'%>
+      </span>
+      
+      <%= f.submit(@offer.new_record? ? 'Crear Oferta' : 'Editar Oferta', class: "btn btn-danger")%>
+      <%end%>
+    </div>
+  </div>
+  
+   <script type="text/javascript">
+    $('#offer_picture').bind('change',function(){
+      size_in_megabytes = this.files[0].size/1024/1024;
+      if(size_in_megabytes > 5){
+        alert('El achivo debe pesar menos de 5 MB. Escoge un archivo con menor tamaño')
+      }
+    })
+  </script>
