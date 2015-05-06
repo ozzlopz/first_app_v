@@ -63,7 +63,7 @@ class OffersController < ApplicationController
     def require_same_user
       if current_user != @offer.user and !current_user.admin?
         flash[:danger] = "Solamente puedes editar ofertas publicadas por otros usuarios si tu cuenta es de administrador"
-        redirect_to root_path
+        redirect_to offers_path
       end
     end
     

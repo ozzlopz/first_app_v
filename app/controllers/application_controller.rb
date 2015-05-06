@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
   
   def current_user
-    @current_user ||= Chef.find(session[:chef_id]) if session[:chef_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   
   def logged_in?
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   
   def require_user
     if !logged_in?
-      flash[:danger] = "Debes haber iniciado sesión para poder realizar esa acción"
+      flash[:danger] = "Para realizar esa acción debes tener una sesión iniciada"
       redirect_to offers_path
     end
   end

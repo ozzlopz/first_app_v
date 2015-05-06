@@ -12,7 +12,7 @@ $navbar-default-color: $light-orange;
 
 .username_red{
    font-family: 'Roboto Condensed', sans-serif;
-   color:#c8282c;
+   color:#c8282c !important;
 }
 
 .seat_font{
@@ -50,7 +50,7 @@ $navbar-default-color: $light-orange;
 
 .btn-icon:hover {
   background: #c8282c;
-  color: #fff;
+  color: #fff !important;
   background-image: -webkit-linear-gradient(top, #fc3c3c, #ff0000);
   background-image: -moz-linear-gradient(top, #fc3c3c, #ff0000);
   background-image: -ms-linear-gradient(top, #fc3c3c, #ff0000);
@@ -64,6 +64,19 @@ $navbar-default-color: $light-orange;
   float:left;
   margin-right:10px;
   font-size:2em;
+  color:#c8282c;
+  
+  letter-spacing:-1px;
+  padding-top:9px;
+  font-weight:bold;
+}
+
+#session{
+  margin-top:20px;
+  margin-bottom:10px;
+  float:right;
+  margin-right:10px;
+  font-size:1.2em;
   color:#c8282c;
   
   letter-spacing:-1px;
@@ -86,6 +99,7 @@ body{
   margin-left:25px;
   float:left;
   margin-top:20px;
+  list-style:none;
 }
 
 .nav_ul_item{
@@ -93,6 +107,7 @@ body{
   float:left;
   margin-top:20px;
   padding-left:0;
+  list-style:none;
 }
 
 .center{

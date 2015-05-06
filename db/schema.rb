@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505161718) do
+ActiveRecord::Schema.define(version: 20150506031808) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "cars", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "categorias", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string "name"
   end
 
   create_table "comments", force: true do |t|
@@ -38,6 +50,16 @@ ActiveRecord::Schema.define(version: 20150505161718) do
     t.datetime "updated_at"
   end
 
+  create_table "offer_cars", force: true do |t|
+    t.integer "car_id"
+    t.integer "offer_id"
+  end
+
+  create_table "offer_categories", force: true do |t|
+    t.integer "category_id"
+    t.string  "offer_id"
+  end
+
   create_table "offers", force: true do |t|
     t.string   "name"
     t.text     "summary"
@@ -53,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150505161718) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.boolean  "admin",           default: false
   end
 
 end
