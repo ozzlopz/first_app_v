@@ -23,7 +23,10 @@
       <%= image_tag(@offer.picture.url,class:"gravatar") if @offer.picture? %>
     </div>
     <div class="well">
-      <strong>Steps: </strong>
+       <% if @offer.cars.any? %>
+       <p>Publicada para: <%= render @offer.cars %></p>
+       <% end %>
+      <strong>Descripción de la oferta: </strong>
       </p>
       <%= simple_format(@offer.description) %>
     </div>

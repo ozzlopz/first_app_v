@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "Todas las ofertas" %> 
+<%= render 'shared/page_title', title: "Ofertas para: " +  @car.name %> 
 
 <ul class="nav nav-tabs">
   <li class='active'>
@@ -9,9 +9,9 @@
   </li>
 </ul>
 
-<%= will_paginate %>
+<%= will_paginate @offers %>
 
-<% @offers.each do |offer| %>
+<% @car.offers.each do |offer| %>
   <div class="row">
       <div class="col-md-2">
         <section class="chef_info center">
@@ -23,17 +23,16 @@
       <div class="col-lg-6 well">
          <h4><%= link_to offer.name, offer_path(offer) %></h4>
          <p><%= offer.summary %></p>
-        <% if offer.cars.any? %>
-        <p>Publicado para: <%= render offer.cars %></p>
-         <% end %>
+         <p>Publicado para: <%= render offer.cars %></p>
+         <p>
            <span class = "quiet">
              <small>
-              creado: <%=time_ago_in_words(offer.created_at)%>, 
+              Creado: <%=time_ago_in_words(offer.created_at)%>, 
              </small>
            </span>
            <span class = "quiet">
              <small>
-                editado: <%= time_ago_in_words(offer.updated_at)%>
+                Actualizado: <%= time_ago_in_words(offer.updated_at)%>
              </small>
            </span>
          </p>
@@ -45,4 +44,4 @@
   <hr/>
 <% end %>
 
-<%= will_paginate %>
+<%= will_paginate @offers %>

@@ -1,0 +1,13 @@
+<%= render 'shared/page_title', title: "Crear nueva Categoría" %> 
+<%= render 'shared/errors', obj: @car %>
+<div class="row">
+    <div class="well  col-md-8 col-md-offset-2">
+      <%= form_for @car do |f| %>
+      <%= f.label :Nombre %>
+      <%= f.text_field :name %>
+  
+      <%= f.submit 'Crear Categoría',class:"btn btn-success"%>
+      <%end%>
+    </div>
+  </div>
+  

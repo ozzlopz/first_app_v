@@ -52,8 +52,7 @@ class OffersController < ApplicationController
   private
   
     def recipe_params
-      params.require(:offer).permit(:name,:summary,:description,:picture)
-      #,,style_ids:[],ingredient_ids:[])
+      params.require(:offer).permit(:name,:summary,:description,:picture,car_ids:[])
     end
     
     def set_offer

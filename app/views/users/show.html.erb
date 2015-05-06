@@ -17,6 +17,7 @@
   <div class="col-lg-6 well col-lg-offset-1">
     <h4><%= link_to offer.name, offer_path(offer) %></h4>
     <p><%= offer.summary %></p>
+     <p>Publicado para: <%= render offer.cars %></p>
     <p>
       <span class = "quiet">
         <small>
@@ -30,5 +31,8 @@
       </span>
      </p>
     </div>
+    <div class="col-md-4">
+        <%= image_tag(offer.picture.url,size: "250x150",class: "gravatar") if offer.picture? %>
+      </div>
 </div>
 <%end%>
