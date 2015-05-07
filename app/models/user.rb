@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   
   private
     def picture_size
-      if picture.size > 0.25.megabytes
+      if :picture.size > 1.megabytes
         errors.add(:picture, "Debe pesar menos de 256KB")
       end
     end                                 
