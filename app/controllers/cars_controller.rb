@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
    before_action :set_car, only: [:edit,:update,:show] 
+   before_action :require_logged__user
    before_action :require_user
    before_action :admin_user, only: [:new,:create,:edit,:update,:destroy]
    
@@ -59,5 +60,11 @@ class CarsController < ApplicationController
       redirect_to cars_path unless current_user.admin?
     end
     
+    def require_logged__user
+      if !logged_in?
+        flash[:danger] = "Para realizar esa acción debes tener una sesión iniciada"
+       redirect_to root_path
+      end
+    end
     
 end
