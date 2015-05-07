@@ -3,14 +3,19 @@
     <div class="well  col-md-8 col-md-offset-2">
       <%= form_for(@offer,html: { multipart: true }) do |f| %>
       <%= f.label :name %>
-      <%= f.text_field :name %>
-      
-       <%= f.label :summary %>
-      <%= f.text_field :summary %>
-      
-       <%= f.label :description %>
-      <%= f.text_area :description, rows: 10 %>
-      
+      <%= f.text_field :name , class: "charcount_field",:maxlength => 100 %>
+       <div class="pull-right"><span class="small charcount-number" id="char-count-name"></span></div><br><br>
+       
+      <%= f.label :summary %>
+      <%= f.text_field :summary, class: "charcount_field",:maxlength => 150 %>
+       <div class="pull-right"><span class="small charcount-number" id="char-count-summary"></span></div><br><br>
+     
+
+      <%= f.label :description %>
+      <%= f.text_area :description,class: "charcount_field", rows: 6,:maxlength => 500 %>
+       <div class="pull-right"><span class="small charcount-number" id="char-count-description"></span></div><br><br>
+       
+       
       <strong>Publicar para:</strong>: </strong>
       <%= f.collection_check_boxes :car_ids, Car.all,:id,:name do |cbi| %>
         <% cbi.label(class:"checkbox-inline input_checkbox"){ cbi.check_box(class:"checkbox") + cbi.text} %>
@@ -33,5 +38,41 @@
       if(size_in_megabytes > 0.25){
         alert('El achivo debe pesar menos de 256 KB. Escoge un archivo con menor tamaño')
       }
-    })
+    });
+    
+    $('#offer_name').on('keyup keydown', '', function(e) {
+    var maxLen = 100;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-name').html(left);
+    
+    if(left > 10)
+      $("#char-count-name").css('color', 'gray');
+    else
+      $("#char-count-name").css('color', 'red');
+    }); 
+    
+    
+    $('#offer_summary').on('keyup keydown', '', function(e) {
+    var maxLen = 150;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-summary').html(left);
+    
+    if(left > 10)
+      $("#char-count-summary").css('color', 'gray');
+    else
+      $("#char-count-summary").css('color', 'red');
+    }); 
+    
+    
+    $('#offer_description').on('keyup keydown', '', function(e) {
+    var maxLen = 500;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-description').html(left);
+    
+    if(left > 10)
+      $("#char-count-description").css('color', 'gray');
+    else
+      $("#char-count-description").css('color', 'red');
+    }); 
+
   </script>

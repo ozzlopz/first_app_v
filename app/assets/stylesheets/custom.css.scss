@@ -4,6 +4,14 @@ $navbar-default-color: $light-orange;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.charcount-number{
+  font-size:.8em;
+}
+.charcount_field{
+  margin-bottom: 0px !important;
+  border-bottom:0px !important;
+  padding-bottom:0px !important;
+}
 
 .start_image{
   width:15px;

@@ -3,16 +3,21 @@
     <div class="well  col-md-8 col-md-offset-2">
       <%= form_for @user do |f| %>
       <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.text_field :username , class: "charcount_field",:maxlength => 40 %>
+       <div class="pull-right"><span class="small charcount-number" id="char-count-username"></span></div><br><br>
+      
       
        <%= f.label :email %>
-      <%= f.email_field :email %> 
-      
+      <%= f.email_field :email , class: "charcount_field",:maxlength => 105 %>
+      <div class="pull-right"><span class="small charcount-number" id="char-count-email"></span></div><br><br>
+       
       <%= f.label :password %>
-      <%= password_field :user, :password %>
+      <%= password_field :user, :password , class: "charcount_field",:maxlength => 40 %>
+      <div class="pull-right"><span class="small charcount-number" id="char-count-password"></span></div><br><br>
       
       <%= f.label :password_confirmation %>
-      <%= password_field :user, :password_confirmation %>
+      <%= password_field :user, :password_confirmation , class: "charcount_field",:maxlength => 40 %>
+      <div class="pull-right"><span class="small charcount-number" id="char-count-password_confirmation"></span></div><br><br>
       
       <%= f.label :picture %>
        <span class="picture">
@@ -34,5 +39,53 @@
       if(size_in_megabytes > 0.25){
         alert('El achivo debe pesar menos de 256 KB. Escoge un archivo con menor tamaño')
       }
-    })
+    });
+    
+    
+        
+    $('#user_username').on('keyup keydown', '', function(e) {
+    var maxLen = 40;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-username').html(left);
+    
+    if(left > 10)
+      $("#char-count-username").css('color', 'gray');
+    else
+      $("#char-count-username").css('color', 'red');
+    }); 
+    
+    
+    $('#user_email').on('keyup keydown', '', function(e) {
+    var maxLen = 105;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-email').html(left);
+    
+    if(left > 10)
+      $("#char-count-email").css('color', 'gray');
+    else
+      $("#char-count-email").css('color', 'red');
+    }); 
+    
+    
+    $('#user_password').on('keyup keydown', '', function(e) {
+    var maxLen = 40;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-password').html(left);
+    
+    if(left > 10)
+      $("#char-count-password").css('color', 'gray');
+    else
+      $("#char-count-password").css('color', 'red');
+    }); 
+    
+    $('#user_password_confirmation').on('keyup keydown', '', function(e) {
+    var maxLen = 40;
+    var left = maxLen - $(this).val().length;
+    $('#char-count-password_confirmation').html(left);
+    
+    if(left > 10)
+      $("#char-count-password_confirmation").css('color', 'gray');
+    else
+      $("#char-count-password_confirmation").css('color', 'red');
+    }); 
   </script>
