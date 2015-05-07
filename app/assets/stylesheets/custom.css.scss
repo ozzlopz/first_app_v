@@ -10,6 +10,11 @@ $navbar-default-color: $light-orange;
   border-radius:200px;
 }
 
+.username_gray{
+   font-family: 'Roboto Condensed', sans-serif;
+   color:#5a6168 !important;
+}
+
 .username_red{
    font-family: 'Roboto Condensed', sans-serif;
    color:#c8282c !important;
@@ -35,9 +40,9 @@ $navbar-default-color: $light-orange;
   background-image: -ms-linear-gradient(top, #dcdee0, #f0edf0);
   background-image: -o-linear-gradient(top, #dcdee0, #f0edf0);
   background-image: linear-gradient(to bottom, #dcdee0, #f0edf0);
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
-  border-radius: 15px;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
   -webkit-box-shadow: 0px 1px 3px #666666;
   -moz-box-shadow: 0px 1px 3px #666666;
   box-shadow: 0px 1px 3px #666666;
@@ -180,4 +185,9 @@ span.picture{
 
 .show_recipe{
   margin: 10px 10px 10px 10px;
+}
+
+.checkbox-admin{
+  width:50px;
+  margin-bottom:5px !important;
 }

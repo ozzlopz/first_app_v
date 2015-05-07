@@ -2,14 +2,27 @@
 <div class="row">
     <div class="well  col-md-8 col-md-offset-2">
       <%= form_for @user do |f| %>
-      <%= f.label :usuario %>
+      <%= f.label :username %>
       <%= f.text_field :username %>
       
        <%= f.label :email %>
       <%= f.email_field :email %> 
       
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= password_field :user, :password %>
+      
+      <%= f.label :password_confirmation %>
+      <%= password_field :user, :password_confirmation %>
+      
+      <%= f.label :picture %>
+       <span class="picture">
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'%>
+      </span>
+      
+      <% if current_user.admin? %>
+       <%= f.label :admin %>
+       <%= f.check_box :admin, :class => "checkbox-inline checkbox-admin"%>
+       <%end%>
       
       <%= f.submit(@user.new_record? ? 'Registrar' : 'Editar perfil', class: "btn btn-danger")%>
       <%end%>

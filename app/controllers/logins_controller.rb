@@ -1,5 +1,8 @@
 class LoginsController < ApplicationController
   
+  before_action :require_logged__user, only: :destroy
+  before_action :require_unlogged__user, only: [:new,:create]
+  
   def new
   end
   
@@ -20,6 +23,22 @@ class LoginsController < ApplicationController
     flash[:success] = "La sesión se ha cerrado exitosamente"
     redirect_to root_path
   end
+  
+  private 
+    def require_logged__user
+      if !logged_in?
+        flash[:danger] = "Para realizar esa acción debes tener una sesión iniciada"
+        redirect_to root_path
+      end
+    end
+    
+    def require_unlogged__user
+      if logged_in?
+        flash[:danger] = "Ya tienes iniciada una sesión"
+        redirect_to root_path
+      end
+    end
+    
   
 end
   

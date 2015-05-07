@@ -3,24 +3,24 @@
     <%= link_to "SEAT Pachuca",root_path,class: "btn btn-lg btn-icon", id: "logo"%>
    
     <% if logged_in? %>
-     <ul class="nav_ul_item">
+      <ul class="nav_ul_item">
        <li class="dropdown">
         <%= link_to '#', class: "btn btn-md btn-default btn-danger dropdown-toggle","data-toggle" => "dropdown" do %>
           Categorías<b class="caret"></b>
-          <%end%>
-          <ul class ='dropdown-menu'>
-            <% Car.all.each do |car| %>
-              <li><%= link_to car.name,car_path(car) %></li>
-            <% end%>
-            
-              <li class= "divider"></li>
-              <li> 
-                <%= link_to (new_car_path) do %>
-                  Nueva categoría
-               
-              </li>
+        <%end%>
+      <ul class ='dropdown-menu'>
+        <% Car.all.each do |car| %>
+          <li><%= link_to car.name,car_path(car) %></li>
+        <% end%>
+        <% if current_user.admin? %>
+          <li class= "divider"></li>
+          <li> 
+            <%= link_to (new_car_path) do %>
+              Nueva categoría
             <% end %>
-          </ul>
+          </li>
+        <% end %>
+      </ul>
       </li>
     </ul>
     <% if current_user.admin? %>

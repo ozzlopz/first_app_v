@@ -8,5 +8,24 @@ class User < ActiveRecord::Base
                                    uniqueness:{case_sensitive:false},
                                    format:{with: VALID_EMAIL_REGEX}
                                    
+  validates :password, :confirmation => true,
+                       :length => {:within => 6..40},
+                       :allow_blank => true,
+                       :on => :update 
+  
+  validates :password_confirmation, presence: true,
+                                    :allow_blank => true,
+                                    :on => :update 
+  
+  mount_uploader :picture, PictureUploader
+  validate :picture_size
+  
+  private
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "Debe pesar menos de 5MB")
+      end
+    end                                 
+                                   
   has_secure_password
 end

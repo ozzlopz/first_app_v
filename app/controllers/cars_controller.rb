@@ -1,8 +1,13 @@
 class CarsController < ApplicationController
+   before_action :set_car, only: [:edit,:update,:show] 
    before_action :require_user
+   before_action :admin_user, only: [:new,:create,:edit,:update,:destroy]
    
+  def index
+    @cars = Car.paginate(page: params[:page], per_page: 4)
+  end
+  
   def show
-    @car = Car.find(params[:id])
     @offers = @car.offers.paginate(page: params[:page], per_page: 4)
   end
   
@@ -15,14 +20,44 @@ class CarsController < ApplicationController
     
     if @car.save
       flash[:success] = "Se ha creado la categoría exitosamente"
-      redirect_to offers_path
+      redirect_to cars_path
     else
       render 'new'
     end
   end
   
+  def edit
+    
+  end
+  
+  def update
+    if @car.update(car_params)
+      flash[:success] = "La categoría ha sido editada exitosamente"
+      redirect_to cars_path
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+    Car.find(params[:id]).destroy
+    flash[:success] = "Categoría borrada exitosamente"
+    redirect_to cars_path
+  end
+  
+  
   private
     def car_params
       params.require(:car).permit(:name)
     end
+    
+    def set_car
+      @car = Car.find(params[:id])
+    end
+    
+    def admin_user
+      redirect_to cars_path unless current_user.admin?
+    end
+    
+    
 end

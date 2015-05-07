@@ -41,9 +41,15 @@ class UsersController < ApplicationController
     @offers = @user.offers.paginate(page: params[:page], per_page: 3)
   end
   
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Usuario borrado exitosamente"
+    redirect_to users_path
+  end
+  
   private 
     def user_params
-      params.require(:user).permit(:username,:email,:password)
+      params.require(:user).permit(:username,:email,:password,:admin,:picture,:password_confirmation)
     end
     
     def set_user

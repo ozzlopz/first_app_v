@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     resources :offers
     
-    resources :users, except: [:new, :destroy]
+    resources :users, except: [:new]
     get '/register', to: 'users#new'
     
     get '/login', to: "logins#new"

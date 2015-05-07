@@ -46,7 +46,7 @@ class OffersController < ApplicationController
   def destroy
     Offer.find(params[:id]).destroy
     flash[:success] = "Oferta borrada exitosamente"
-    redirect_to recipes_path
+    redirect_to offers_path
   end
   
   private

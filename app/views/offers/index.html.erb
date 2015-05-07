@@ -7,19 +7,34 @@
   <li>
     <%= link_to "Usuarios", users_path %>
   </li>
+  <li>
+    <%= link_to "Categorías", cars_path %>
+  </li>
 </ul>
 
 <%= will_paginate %>
 
 <% @offers.each do |offer| %>
   <div class="row">
+    
       <div class="col-md-2">
         <section class="chef_info center">
-           <%= image_tag("seatLogo.png", size:"100x100") %>
-          <h5 class= "username_red">Usuario: <%= offer.user.username %></h5>
+          <% if offer.user %>
+            <% if offer.user.picture? %>
+              <%= link_to image_tag(offer.user.picture.url,size: "100x100",class: "gravatar") ,user_path(offer.user) %>
+            <%else%>
+              <%= link_to image_tag("seatLogo.png", size:"100x100",class: "gravatar"),user_path(offer.user) %>
+            <%end%>
+          <% else %>
+            <%= image_tag("seatLogo.png", size:"100x100",class: "gravatar") %>
+          <% end %>
+           <% if offer.user %>
+            <h5 class= "username_red">Usuario: <%= offer.user.username %></h5>
+          <% else %>
+            <h5 class= "username_gray">Usuario eliminado</h5>
+          <% end %>
         </section>
       </div>
-      
       <div class="col-lg-6 well">
          <h4><%= link_to offer.name, offer_path(offer) %></h4>
          <p><%= offer.summary %></p>

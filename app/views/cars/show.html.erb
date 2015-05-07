@@ -1,11 +1,14 @@
 <%= render 'shared/page_title', title: "Ofertas para: " +  @car.name %> 
 
 <ul class="nav nav-tabs">
-  <li class='active'>
+   <li>
     <%= link_to "Ofertas", offers_path %>
   </li>
   <li>
     <%= link_to "Usuarios", users_path %>
+  </li>
+  <li class='active'>
+    <%= link_to "Categorías", cars_path %>
   </li>
 </ul>
 
@@ -45,3 +48,5 @@
 <% end %>
 
 <%= will_paginate @offers %>
+
+<h5><%= link_to "Regresar a la Lista de Categorías", cars_path, class:"btn btn-danger btn-small" %></h5>

@@ -1,7 +1,11 @@
 <%= render 'shared/page_title', title: "Usuario: " +  @user.username %> 
 <div class="row">
   <div class="col-md-4 col-md-offset-4 center">
-    <%= image_tag("seatLogo.png", size:"100x100") %>
+    <% if @user.picture? %>
+      <%= image_tag(@user.picture.url,size: "200x200",class: "gravatar") %>
+    <%else%>
+      <%= image_tag("seatLogo.png", size:"200x200",class: "gravatar") %>
+    <%end%>
     <hr/>
   </div>
 </div>
@@ -17,7 +21,8 @@
   <div class="col-lg-6 well col-lg-offset-1">
     <h4><%= link_to offer.name, offer_path(offer) %></h4>
     <p><%= offer.summary %></p>
-     <p>Publicado para: <%= render offer.cars %></p>
+     <% if offer.cars.any? %>
+     <p>Publicado para: <%= render offer.cars %></p><%end%>
     <p>
       <span class = "quiet">
         <small>
@@ -36,3 +41,4 @@
       </div>
 </div>
 <%end%>
+<h5><%= link_to "Regresar a la Lista de Usuarios", users_path, class:"btn btn-danger btn-small" %></h5>

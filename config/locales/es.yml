@@ -20,6 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  activerecord:
+        attributes:
+         car:
+          name: "Nombre"
+         user:
+          username: "Nombre de Usuario"
+          email: "Correo Electrónico"
+          password: "Contraseña"
+          admin: "¿Es administrador?"
+          picture: "Foto"
+          password_confirmation: "Confirmar contraseña"
+         offer:
+          name: "Título"
+          summary: "Resumen"
+          description: "Descripción"
+          picture: "Imagen para la oferta"
+
   date:
     abbr_day_names:
     - dom
@@ -118,6 +135,7 @@ es:
       year: Año
   errors:
     format: "%{attribute} %{message}"
+    
     messages:
       accepted: debe ser aceptado
       blank: no puede estar en blanco
@@ -141,6 +159,8 @@ es:
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
     template:
+      
+      message_errors_present: Favor de corregir los siguientes errores
       body: 'Se encontraron problemas con los siguientes campos:'
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
@@ -227,3 +247,6 @@ es:
     zero: No se encontraron %{model}
     page_gap: "&hellip;"
     previous_label: "← Atrás"
+    
+    
+      
