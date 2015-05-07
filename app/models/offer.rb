@@ -17,8 +17,8 @@ class Offer < ActiveRecord::Base
   
   private
     def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, "Debe pesar menos de 5MB")
+      if picture.size > 0.25.megabytes
+        errors.add(:picture, "Debe pesar menos de 256KB")
       end
     end
 end
