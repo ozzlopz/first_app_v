@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Resumen de la notificación</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Material Design stuff -->
+      <link href="css/roboto.min.css" rel="stylesheet">
+      <!--link href="css/material.min.css" rel="stylesheet"-->
+      <link href="css/material-fullpalette.min.css" rel="stylesheet">
+      <link href="css/ripples.min.css" rel="stylesheet">
+      <!-- Custom Admin CSS -->
+      <link href="css/sb-admin.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+      <!-- JQuery Calendar -->
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div id="wrapper">
+         <!-- NAV LOADED DINAMICALLY -->
+         <div id="dynamic-container">
+            <!-- NEW CONTENT LOADS HERE-->
+         </div>
+      <!-- end navbar -->
+         <div id="page-wrapper">
+            <div class="container-fluid">
+               <!-- Page Heading -->
+               <div class="row">
+                  <div class="col-lg-12">
+                     <h2>Resumen de la notificación</h2>
+                     <p></p>
+                  </div>
+               </div>
+               <!-- form example -->
+               <div class="row">
+                  <div class="col-lg-8">
+                     <div class="well">
+                     
+                        <div id="alerts_container">
+                           <!-- loaded dinamically -->
+                        </div>
+
+                        <div id="resume">
+
+                           <div class="row">
+                              <div id="titleContainer">
+                                 <h4 class="col-lg-2">Título:</h4>
+                                 <pre class="col-lg-9" id="title"></pre>
+                              </div>
+                           </div>
+
+                           <div class="row">
+                              <div id="messageContainer">
+                                 <h4 class="col-lg-2">Mensaje:</h4>
+                                 <pre class="col-lg-9" id="message"></pre>
+                              </div>
+                           </div>
+
+                           <br><br>
+
+                           <div class="row">
+                              <div id="creaationContainer">
+                                 <h4 class="col-lg-2">Creada el:</h4>
+                                 <pre class="col-lg-9" id="creation"></pre>
+                              </div>
+                           </div>
+
+                           <div class="row">
+                              <div id="sendStateContainer">
+                                 <h4 class="col-lg-2">Estado:</h4>
+                                 <pre class="col-lg-9" id="sendState"></pre>
+                              </div>
+                           </div>
+
+                           <br><br>
+
+                           <div class="row">
+                              <div id="targetsContainer">
+                                 <h4 class="col-lg-3">Enviada a:</h4>
+                                 <pre class="col-lg-8" id="targets"></pre>
+                              </div>
+                           </div>
+
+                           <div class="row">
+                              <div id="recipientsContainer">
+                                 <h4 class="col-lg-3">Destinatarios:</h4>
+                                 <pre class="col-lg-8" id="recipients"> </pre>
+                              </div>
+                           </div>
+
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+               <!-- /.container-fluid -->
+         </div>
+         <!-- /#page-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+
+
+      <!-- jQuery Version 1.11.1 -->
+      <script src="js/jquery.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Material Design js -->
+      <script src="js/ripples.min.js"></script>
+      <script src="js/material.min.js"></script>
+      <!-- Load Menu -->
+      <script src="js/load_menu.js"></script>
+      <!-- Calendar -->
+      <script src="js/push_resume.js"></script>
+   </body>
+</html>

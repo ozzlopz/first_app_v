@@ -7,6 +7,16 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.paginate(page: params[:page], per_page: 4)
+    
+    @alloffers = Offer.all
+    
+    respond_to do |format|
+
+    format.html 
+
+    format.json { render json: @alloffers }
+
+end
   end
   
   def show

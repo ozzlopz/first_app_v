@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     get '/logout', to: "logins#destroy"
     
     resources :cars 
+    
+    resources :notifications
 end

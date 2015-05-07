@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Notificaciones</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Material Design stuff -->
+      <link href="css/roboto.min.css" rel="stylesheet">
+      <!--link href="css/material.min.css" rel="stylesheet"-->
+      <link href="css/material-fullpalette.min.css" rel="stylesheet">
+      <link href="css/ripples.min.css" rel="stylesheet">
+      <!-- Custom Admin CSS -->
+      <link href="css/sb-admin.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+      <!-- JQuery Calendar -->
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div id="wrapper">
+         <!-- NAV LOADED DINAMICALLY -->
+         <div id="dynamic-container">
+            <!-- NEW CONTENT LOADS HERE-->
+         </div>
+      <!-- end navbar -->
+         <div id="page-wrapper">
+            <div class="container-fluid">
+               <!-- Page Heading -->
+               <div class="row">
+                  <div class="col-lg-12">
+                     <h1 class="page-header">
+                        Envío de Notificaciones Push
+                     </h1>
+                     <br>
+                     <h2>Crear una nueva notificación</h2>
+                     <subtitle>Para todos los usuarios de la aplicación</subtitle>
+                     <p></p>
+                  </div>
+               </div>
+               <!-- form example -->
+               <div class="row">
+                  <div class="col-lg-8">
+                     <div class="well">
+                        <div id="alerts_container">
+                           <div class="alert alert-dismissable alert-success">
+                              <button type="button" class="close" data-dismiss="alert">×</button>
+                              <i class="mdi-action-done"></i>
+                              <p>Oh snap! Change a few things up and try submitting again.</p>
+                           </div>
+                        </div>
+
+                        <form class="form-horizontal" id="notif_form">
+                           <fieldset>
+                              <!-- area mensaje -->
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <h3 class="panel-title">Mensaje</h3>
+                                 </div>
+                                 <div class="panel-body">
+                                    <!-- titulo -->
+                                    <div class="form-group">
+                                       <label for="inputTitle" class="col-lg-2 control-label">Título</label>
+                                       <div class="col-lg-10">
+                                          <input type="text" maxlength="50" class="form-control" id="inputTitle" placeholder="Título de la notificación (aplica sólo para Android)">
+                                       </div>
+                                    </div>
+                                    <br>
+                                    <!-- contenido -->
+                                    <div class="form-group">
+                                       <label for="inputContent" class="col-lg-2 control-label">Contenido</label>
+                                       <div class="col-lg-10">
+                                          <textarea class="form-control" rows="3" id="inputContent"></textarea>
+                                          <span class="help-block">El contenido de la Notificación Push</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- area momento de envio -->
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <h3 class="panel-title">Momento de Envío</h3>
+                                 </div>
+                                 <div class="panel-body">
+                                    <!-- programar envio ? -->
+                                    <div class="form-group">
+                                       <label class="col-lg-3 control-label">¿Programar el envío de la notificación?</label>
+                                       <div class="col-lg-9">
+                                          <div class="radio radio-primary">
+                                             <label>
+                                                <input type="radio" name="scheduleRadio" value="N" onChange="onScheduleRadioChange()" checked>
+                                                No. Enviar la notificación inmediatamente.
+                                             </label>
+                                          </div>
+                                          <div class="radio radio-primary">
+                                             <label>
+                                             <input type="radio" name="scheduleRadio" value="Y" onChange="onScheduleRadioChange()">
+                                             Sí. Programar el envío para un momento específico
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <!-- enviar en -->
+                                    <div class="panel panel-info" id="schedule_panel" style="display:none">
+                                       <div class="panel-heading">
+                                          <h3 class="panel-title">Enviar en:</h3>
+                                       </div>
+                                       <div class="panel-body">
+                                          <!-- fecha -->
+                                          <div class="form-group">
+                                             <label for="inputDate" class="col-lg-3 control-label">Fecha y hora</label>
+                                             <div class="col-lg-3">
+                                                <input type="text" id="datepicker" maxlength="50" class="form-control" id="inputDate" placeholder="">
+                                             </div>
+                                             <div class="col-lg-2">
+                                                <select class="form-control" id="inputHour">
+                                                   <option value="1">1</option>
+                                                   <option value="2">2</option>
+                                                   <option value="3">3</option>
+                                                   <option value="4">4</option>
+                                                   <option value="5">5</option>
+                                                   <option value="6">6</option>
+                                                   <option value="7">7</option>
+                                                   <option value="8">8</option>
+                                                   <option value="9">9</option>
+                                                   <option value="10">10</option>
+                                                   <option value="11">11</option>
+                                                   <option value="0">12</option>
+                                                </select>
+                                             </div>
+                                             <div class="col-lg-2">
+                                                <select class="form-control" id="inputMinutes">
+                                                   <option value="0">:00</option>
+                                                   <option value="5">:05</option>
+                                                   <option value="10">:10</option>
+                                                   <option value="15">:15</option>
+                                                   <option value="20">:20</option>
+                                                   <option value="25">:25</option>
+                                                   <option value="30">:30</option>
+                                                   <option value="35">:35</option>
+                                                   <option value="40">:40</option>
+                                                   <option value="45">:45</option>
+                                                   <option value="50">:50</option>
+                                                   <option value="55">:55</option>
+                                                </select>
+                                             </div>
+                                             <div class="col-lg-2">
+                                                <select class="form-control" id="inputAmPm">
+                                                   <option value="AM">AM</option>
+                                                   <option value="PM">PM</option>
+                                                </select>
+                                             </div>
+                                             <br><br><br>
+                                             <div class="col-lg-12">
+                                                <p class="text-muted">El envío puede programarse hasta por un máximo de <strong>14 días</strong> a partir de este momento. Si la hora seleccionada ya ha sucedido, la notificación se enviará inmediatamente.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-lg-10 col-lg-offset-2">
+                                    <button class="btn btn-raised" id="form_cancel"><i class="mdi-content-clear"></i> Cancel</button>
+                                    <button class="btn btn-info" id="form_submit"><i class="mdi-content-send"></i> Enviar</button>
+                                 </div>
+                              </div>
+                           </fieldset>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+               <!-- /.container-fluid -->
+         </div>
+         <!-- /#page-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+
+
+      <!-- jQuery Version 1.11.1 -->
+      <script src="js/jquery.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Material Design js -->
+      <script src="js/ripples.min.js"></script>
+      <script src="js/material.min.js"></script>
+      <!-- Load Menu -->
+      <script src="js/load_menu.js"></script>
+      <!-- Calendar -->
+      <script src="js/push.js"></script>
+   </body>
+</html>
