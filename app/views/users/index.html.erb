@@ -32,8 +32,11 @@
       </h5>
     </p>
      <% if current_user.admin? %>
-         <div class="small"><%= link_to "Editar",edit_user_path(user) %> &nbsp &nbsp &nbsp &nbsp
+         <div class="small"><%= link_to "Editar",edit_user_path(user) %>
+         <% if current_user != user %> 
+          &nbsp &nbsp &nbsp &nbsp
         <%= link_to "Eliminar", user, method: :delete, data: {confirm: "¿Estás seguro?"} %></div><%end%>
+        <%end%>
   </div>
 </div>
 <hr/><br>
