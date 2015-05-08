@@ -5,19 +5,19 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
-      <meta name="author" content="">
+      <meta name="author" content="Vesparum Technologies">
       <title>Resumen de la notificación</title>
       <!-- Bootstrap Core CSS -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/bootstrap.min.css" rel="stylesheet">
       <!-- Material Design stuff -->
-      <link href="css/roboto.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/roboto.min.css" rel="stylesheet">
       <!--link href="css/material.min.css" rel="stylesheet"-->
-      <link href="css/material-fullpalette.min.css" rel="stylesheet">
-      <link href="css/ripples.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/material-fullpalette.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/ripples.min.css" rel="stylesheet">
       <!-- Custom Admin CSS -->
-      <link href="css/sb-admin.css" rel="stylesheet">
+      <!--link href="http://vespatechno.com/B1gUGwOK1z/contents/css/sb-admin.css" rel="stylesheet"-->
       <!-- Custom CSS -->
-      <link href="css/custom.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/custom.css" rel="stylesheet">
       <!-- JQuery Calendar -->
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,7 +28,7 @@
       <![endif]-->
    </head>
    <body>
-      <div id="wrapper">
+      <div id="wrapper-no">
          <!-- NAV LOADED DINAMICALLY -->
          <div id="dynamic-container">
             <!-- NEW CONTENT LOADS HERE-->
@@ -54,53 +54,70 @@
 
                         <div id="resume">
 
-                           <div class="row">
-                              <div id="titleContainer">
-                                 <h4 class="col-lg-2">Título:</h4>
-                                 <pre class="col-lg-9" id="title"></pre>
+                           <div class="panel panel-default">
+                              <div class="panel-heading">
+                                 <h3 class="panel-title">Informe</h3>
+                              </div>
+                              <div class="panel-body">
+                                 
+
+                                 <div class="row">
+                                    <div id="titleContainer">
+                                       <h4 class="col-lg-2">Título:</h4>
+                                       <pre class="col-lg-9" id="title"></pre>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div id="messageContainer">
+                                       <h4 class="col-lg-2">Mensaje:</h4>
+                                       <pre class="col-lg-9" id="message"></pre>
+                                    </div>
+                                 </div>
+
+                                 <br><br>
+
+                                 <div class="row">
+                                    <div id="creaationContainer">
+                                       <h4 class="col-lg-2">Creada el:</h4>
+                                       <pre class="col-lg-9" id="creation"></pre>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div id="sendStateContainer">
+                                       <h4 class="col-lg-2">Estado:</h4>
+                                       <pre class="col-lg-9" id="sendState"></pre>
+                                    </div>
+                                 </div>
+
+                                 <br><br>
+
+                                 <div class="row">
+                                    <div id="targetsContainer">
+                                       <h4 class="col-lg-3">Enviada a:</h4>
+                                       <pre class="col-lg-8" id="targets"></pre>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div id="recipientsContainer">
+                                       <h4 class="col-lg-3">Destinatarios:</h4>
+                                       <pre class="col-lg-8" id="recipients"> </pre>
+                                    </div>
+                                 </div>
+                              
                               </div>
                            </div>
 
                            <div class="row">
-                              <div id="messageContainer">
-                                 <h4 class="col-lg-2">Mensaje:</h4>
-                                 <pre class="col-lg-9" id="message"></pre>
+                              <div class="col-lg-5 col-lg-offset-3">
+                                 <button class="btn btn-success" id="ok_button"><i class="mdi-navigation-arrow-back"></i> Regresar</button>
                               </div>
+                              
                            </div>
-
-                           <br><br>
-
-                           <div class="row">
-                              <div id="creaationContainer">
-                                 <h4 class="col-lg-2">Creada el:</h4>
-                                 <pre class="col-lg-9" id="creation"></pre>
-                              </div>
-                           </div>
-
-                           <div class="row">
-                              <div id="sendStateContainer">
-                                 <h4 class="col-lg-2">Estado:</h4>
-                                 <pre class="col-lg-9" id="sendState"></pre>
-                              </div>
-                           </div>
-
-                           <br><br>
-
-                           <div class="row">
-                              <div id="targetsContainer">
-                                 <h4 class="col-lg-3">Enviada a:</h4>
-                                 <pre class="col-lg-8" id="targets"></pre>
-                              </div>
-                           </div>
-
-                           <div class="row">
-                              <div id="recipientsContainer">
-                                 <h4 class="col-lg-3">Destinatarios:</h4>
-                                 <pre class="col-lg-8" id="recipients"> </pre>
-                              </div>
-                           </div>
-
                         </div>
+
 
                      </div>
                   </div>
@@ -113,17 +130,18 @@
       <!-- /#wrapper -->
 
 
-      <!-- jQuery Version 1.11.1 -->
-      <script src="js/jquery.js"></script>
+
+    <!-- jQuery Version 1.11.1 -->
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/jquery.js"></script>
       <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <!-- Bootstrap Core JavaScript -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/bootstrap.min.js"></script>
       <!-- Material Design js -->
-      <script src="js/ripples.min.js"></script>
-      <script src="js/material.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/ripples.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/material.min.js"></script>
       <!-- Load Menu -->
-      <script src="js/load_menu.js"></script>
+      <!--script src="http://vespatechno.com/B1gUGwOK1z/contents/js/load_menu.js"></script-->
       <!-- Calendar -->
-      <script src="js/push_resume.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/push_resume.js"></script>
    </body>
 </html>

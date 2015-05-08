@@ -20,10 +20,12 @@ $navbar-default-color: $light-orange;
 
 .username_gray{
    color:#5a6168 !important;
+   font-weight:bold;
 }
 
 .username_red{
    color:#c8282c !important;
+   font-weight:bold;
 }
 
 .seat_font{
@@ -118,6 +120,7 @@ body{
   margin-top:20px;
   padding-left:0;
   list-style:none;
+  font-weight:bold !important;
 }
 
 .center{

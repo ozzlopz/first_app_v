@@ -5,19 +5,19 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
-      <meta name="author" content="">
-      <title>Notificaciones</title>
+      <meta name="author" content="Vesparum Technologies">
+      <title>Notificaciones Push</title>
       <!-- Bootstrap Core CSS -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/bootstrap.min.css" rel="stylesheet">
       <!-- Material Design stuff -->
-      <link href="css/roboto.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/roboto.min.css" rel="stylesheet">
       <!--link href="css/material.min.css" rel="stylesheet"-->
-      <link href="css/material-fullpalette.min.css" rel="stylesheet">
-      <link href="css/ripples.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/material-fullpalette.min.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/ripples.min.css" rel="stylesheet">
       <!-- Custom Admin CSS -->
-      <link href="css/sb-admin.css" rel="stylesheet">
+      <!--link href="http://vespatechno.com/B1gUGwOK1z/contents/css/sb-admin.css" rel="stylesheet"-->
       <!-- Custom CSS -->
-      <link href="css/custom.css" rel="stylesheet">
+      <link href="http://vespatechno.com/B1gUGwOK1z/contents/css/custom.css" rel="stylesheet">
       <!-- JQuery Calendar -->
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,7 +28,7 @@
       <![endif]-->
    </head>
    <body>
-      <div id="wrapper">
+      <div id="wrapper-no">
          <!-- NAV LOADED DINAMICALLY -->
          <div id="dynamic-container">
             <!-- NEW CONTENT LOADS HERE-->
@@ -44,13 +44,12 @@
                      </h1>
                      <br>
                      <h2>Crear una nueva notificación</h2>
-                     <subtitle>Para todos los usuarios de la aplicación</subtitle>
-                     <p></p>
+                     <!--subtitle>Para un grupo de usuarios en específico</subtitle-->
                   </div>
                </div>
                <!-- form example -->
                <div class="row">
-                  <div class="col-lg-8">
+                  <div class="col-lg-9">
                      <div class="well">
                         <div id="alerts_container">
                            <div class="alert alert-dismissable alert-success">
@@ -86,6 +85,49 @@
                                     </div>
                                  </div>
                               </div>
+
+
+                              <!-- area segmentos -->
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <h3 class="panel-title">Usuarios a los que va dirigida la notificación</h3>
+                                 </div>
+                                 <div class="panel-body">
+
+                                    <!-- agregar filtro -->
+                                    <div class="form-group">
+
+                                       <div class="col-lg-12">
+                                          <p class="text-muted">Pueden agregarse filtros para segmentar el grupo de usuarios a los que se enviará la notificación. Si no hay ningún filtro agregado, ésta se enviará a <strong>todos los usuarios de la aplicación</strong>.</p><br>
+                                       </div>
+
+                                       <div class="col-lg-3">
+                                          <a id="new_filter_btn" class="btn btn-primary">Agregar filtro</a>
+                                       </div>
+                                       <div class="col-lg-6">
+                                          <select class="form-control" id="filterType">
+                                             <option value="fcar">Por nombre del modelo de auto</option>
+                                             <option value="fcolor">Por color de auto</option>
+                                             <option value="fname">Por nombre del usuario</option>
+                                             <option value="fmail">Por correo electrónico del usuario</option>
+                                             <option value="fyears">Por rango de años del modelo de auto</option>
+                                             <option value="fservice">Por tipo de servicio obtenido</option>
+                                             <option value="freg">Por tipo de registro (clientes o no clientes)</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <br>                            
+
+
+                                    <div id="filters_container">
+                                    <!-- loaded dynamically -->
+                                    </div>
+
+
+                                 </div>
+                              </div>
+                              <!-- fin area de segmentos -->
+
                               <!-- area momento de envio -->
                               <div class="panel panel-default">
                                  <div class="panel-heading">
@@ -169,6 +211,8 @@
                                     </div>
                                  </div>
                               </div>
+
+
                               <div class="form-group">
                                  <div class="col-lg-10 col-lg-offset-2">
                                     <button class="btn btn-raised" id="form_cancel"><i class="mdi-content-clear"></i> Cancel</button>
@@ -189,16 +233,16 @@
 
 
       <!-- jQuery Version 1.11.1 -->
-      <script src="js/jquery.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/jquery.js"></script>
       <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <!-- Bootstrap Core JavaScript -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/bootstrap.min.js"></script>
       <!-- Material Design js -->
-      <script src="js/ripples.min.js"></script>
-      <script src="js/material.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/ripples.min.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/material.min.js"></script>
       <!-- Load Menu -->
-      <script src="js/load_menu.js"></script>
+      <!--script src="http://vespatechno.com/B1gUGwOK1z/contents/js/load_menu.js"></script-->
       <!-- Calendar -->
-      <script src="js/push.js"></script>
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/push.js"></script>
    </body>
 </html>
