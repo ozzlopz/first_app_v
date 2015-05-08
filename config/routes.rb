@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root 'pages#home'
     
     get '/home', to: 'pages#home'
+    
 
     resources :offers
     
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
     resources :cars 
     
     resources :notifications
+    get '/resumen_notificacion', to:'notifications#resumen_notificacion'
 end
