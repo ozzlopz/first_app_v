@@ -1,9 +1,1 @@
-<% @alloffers.each do |offer| %>
-  {
-    "name": "<%= raw offer.name.to_json %>",
-    "summary": "<%= raw offer.summary.to_json %>"
-    "description": "<%= raw offer.description.to_json %>"
-    "imageURL": "<%= raw offer.picture.to_json %>"
-    "categories": "<%= raw offer.cars.to_json %>"
-  }
-  <%end%>
+{"ofertas":[<% @alloffers.each_with_index do |offer,index| %>{"oferta":[{"name": <%= raw offer.name.to_json %>},{"summary": <%= raw offer.summary.to_json %>},{"description": <%= raw offer.description.to_json %>},{"imageURL": <%= raw offer.picture.to_json %>},{"categories": <%= raw offer.cars.to_json %>}]}<% if index < @alloffers.size - 1 %>,<%end%><%end%>]}
