@@ -14,7 +14,7 @@ class OffersController < ApplicationController
 
     format.html 
 
-    format.json { render json: @alloffers }
+    format.json {render :partial => "showoffers.json"}
 
 end
   end

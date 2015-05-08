@@ -12,7 +12,7 @@
         <% Car.all.each do |car| %>
           <li><%= link_to car.name,car_path(car) %></li>
         <% end%>
-        <% if current_user.admin? %>
+        <% if current_user.developer? %>
           <li class= "divider"></li>
           <li> 
             <%= link_to (new_car_path) do %>

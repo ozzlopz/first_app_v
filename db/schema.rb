@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507060529) do
+ActiveRecord::Schema.define(version: 20150508000755) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20150507060529) do
     t.boolean  "admin",                 default: false
     t.string   "picture"
     t.string   "password_confirmation"
+    t.boolean  "developer",             default: false
   end
 
 end

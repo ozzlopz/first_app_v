@@ -1,0 +1,9 @@
+<% @alloffers.each do |offer| %>
+  {
+    "name": "<%= raw offer.name.to_json %>",
+    "summary": "<%= raw offer.summary.to_json %>"
+    "description": "<%= raw offer.description.to_json %>"
+    "imageURL": "<%= raw offer.picture.to_json %>"
+    "categories": "<%= raw offer.cars.to_json %>"
+  }
+  <%end%>
