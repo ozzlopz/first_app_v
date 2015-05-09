@@ -2,6 +2,7 @@ class AppusersController < ApplicationController
   
   before_action :set_user, only: :show
   before_action :require_logged__user, only: [:index,:show,:destroy]
+  skip_before_action :verify_authenticity_token
   
   def index
     @appusers = Appuser.paginate(page: params[:page], per_page: 3)
