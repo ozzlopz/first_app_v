@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     
     resources :notifications
     get '/resumen_notificacion', to:'notifications#resumen_notificacion'
+    
+    resources :appusers, only: [:create,:index,:show,:destroy]
 end

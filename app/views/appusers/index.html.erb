@@ -7,33 +7,22 @@
   <li>
     <%= link_to "Usuarios", users_path %>
   </li>
-  <li class='active'>
+  <li>
     <%= link_to "Categorías", cars_path %>
   </li>
-  <li>
+  <li class='active'>
     <%= link_to "Clientes", appusers_path %>
   </li>
 </ul>
 
 <%= will_paginate %>
   <br><br>
-  <% if current_user.developer? %>
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-4 well">
-     <%= link_to (new_car_path) do %>
-        <div class="center">Nueva categoría <span class="glyphicon glyphicon-plus"></span></div>
-     <% end %>
-  </div></div><%end%>
-
-<% @cars.each do |car| %>
+<% @appusers.each do |appuser| %>
   <div class="row">
       <div class="col-lg-offset-2 col-lg-4 well">
-         <h4><%= link_to car.name, car_path(car) %></h4>
+         <h4><%= link_to appuser.name, appuser_path(appuser) %></h4>
          <% if current_user.developer? %>
          <div class="small pull-right"> &nbsp &nbsp &nbsp<%= link_to "Eliminar", car, method: :delete, data: {confirm: "¿Estás seguro?"} %></div><%end%>
-         <% if current_user.admin? %>
-         <div class="small pull-right"><%= link_to "Editar",edit_car_path(car) %></div><%end%>
-         
       </div>
   </div>
   <hr/>
