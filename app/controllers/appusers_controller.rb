@@ -13,7 +13,6 @@ class AppusersController < ApplicationController
   
   def create
     @appuser = Appuser.create(appuser_params)
-    redirect_to appusers_path
   end
   
   def show
