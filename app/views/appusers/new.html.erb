@@ -1,0 +1,34 @@
+<%= render 'shared/page_title', title: "Crear nuevo Cliente" %> 
+<%= render 'shared/errors', obj: @appuser %>
+<div class="row">
+    <div class="well  col-md-8 col-md-offset-2">
+      <%= form_for @appuser do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :first_last_name %>
+      <%= f.text_field :first_last_name %>
+      
+      <%= f.label :second_last_name %>
+      <%= f.text_field :second_last_name %>
+      
+      <%= f.label :lada %>
+      <%= f.text_field :lada %>
+      
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+      
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+      
+      <%= f.label :serial_number %>
+      <%= f.text_field :serial_number %>
+      
+      <%= f.submit 'Crear Cliente',class:"btn btn-danger"%>
+      <%end%>
+    </div>
+  </div>
+  

@@ -8,9 +8,14 @@ class AppusersController < ApplicationController
     @appusers = Appuser.paginate(page: params[:page], per_page: 3)
   end
   
+  def new
+    @appuser = Appuser.new
+  end
+  
   def create
     @appuser = Appuser.new(user_params)
     @appuser.save
+    redirect_to appusers_path
   end
   
   def show
@@ -19,13 +24,13 @@ class AppusersController < ApplicationController
   
   def destroy
     Appuser.find(params[:id]).destroy
-    flash[:success] = "CLiente borrado exitosamente"
+    flash[:success] = "Cliente borrado exitosamente"
     redirect_to appusers_path
   end
   
   private 
     def user_params
-      params.require(:user).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number)
+      params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number)
     end
     
     def set_user
