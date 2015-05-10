@@ -12,7 +12,7 @@ class AppusersController < ApplicationController
   end
   
   def create
-    @appuser = Appuser.new(user_params)
+    @appuser = Appuser.new(appuser_params)
     @appuser.save
     redirect_to appusers_path
   end
@@ -28,7 +28,7 @@ class AppusersController < ApplicationController
   end
   
   private 
-    def user_params
+    def appuser_params
       params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number)
     end
     
