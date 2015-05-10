@@ -12,8 +12,7 @@ class AppusersController < ApplicationController
   end
   
   def create
-    @appuser = Appuser.new(appuser_params)
-    @appuser.save
+    @appuser = Appuser.create(appuser_params)
     redirect_to appusers_path
   end
   
