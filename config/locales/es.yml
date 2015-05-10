@@ -36,17 +36,15 @@ es:
           summary: "Resumen"
           description: "Descripción"
           picture: "Imagen para la oferta"
-          
-          appusers:
-            name: "Nombre(s)"
-            first_last_name: "Apellido Paterno"
-            second_last_name: "Apellido Materno"
-            lada: "Lada"
-            phone: "Teléfono"
-            email: "Correo Electrónico"
-            model: "Modelo"
-            serial_number: "No. de Serie"
-            
+        appuser:
+          name: "Nombre(s)"
+          first_last_name: "Apellido Paterno"
+          second_last_name: "Apellido Materno"
+          lada: "Lada"
+          phone: "Teléfono"
+          email: "Correo Electrónico"
+          model: "Modelo"
+          serial_number: "No. de Serie"  
 
   date:
     abbr_day_names:
