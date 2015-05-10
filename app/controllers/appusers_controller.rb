@@ -13,6 +13,8 @@ class AppusersController < ApplicationController
   
   def create
     @appuser = Appuser.create(appuser_params)
+    respond_to do |format|
+    format.json { render json: @appuser }
   end
   
   def show
