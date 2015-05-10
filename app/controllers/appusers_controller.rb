@@ -6,11 +6,7 @@ class AppusersController < ApplicationController
   def index
     @appusers = Appuser.paginate(page: params[:page], per_page: 3)
   end
-  
-  def new
-    @appuser = Appuser.new
-  end
-  
+
   def create
     @appuser = Appuser.create(appuser_params)
   
