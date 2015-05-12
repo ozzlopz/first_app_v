@@ -15,16 +15,45 @@
   </li>
 </ul>
 
-<%= will_paginate %>
   <br><br>
-<% @appusers.each do |appuser| %>
-  <div class="row">
-      <div class="col-lg-offset-2 col-lg-4 well">
-         <h4><%= link_to appuser.name, appuser_path(appuser) %></h4>
-        
-      </div>
-  </div>
-  <hr/>
-<% end %>
 
-<%= will_paginate %>
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th>
+        Nombre(s)
+      </th>
+      <th>
+        Appellido Paterno
+      </th>
+      <th>
+        Apellido Materno
+      </th>
+       <th>
+        Teléfono
+      </th>
+       <th>
+        Correo electrónico
+      </th>
+    </tr>
+  </thead>
+  
+  <tbody>
+   
+      <% @appusers.each do |appuser| %>
+       <tr>
+         <td><%= link_to appuser.name, appuser_path(appuser) %></td>
+         <td><%= link_to appuser.first_last_name, appuser_path(appuser) %></td>
+         <td><%= link_to appuser.second_last_name, appuser_path(appuser) %></td>
+         <td><%= link_to appuser.phone, appuser_path(appuser) %></td>
+         <td><%= link_to appuser.email, appuser_path(appuser) %></td>
+         <% if logged_in? and current_user.admin? %>
+           <td class="small"><%= link_to "Eliminar", appuser, method: :delete, data: {confirm: "¿Estás seguro?"} %></td>
+         <% end %>
+        </tr>
+      <% end %>
+    
+   
+  </tbody>
+</table>
+

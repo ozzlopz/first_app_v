@@ -1,36 +1,52 @@
-<%= render 'shared/page_title', title: @appuser.name %> 
+<%= render 'shared/page_title', title:"Detalle de cliente" %> 
 <%= render 'shared/errors', obj: @appuser %>
 <div class="row">
-  <div class="col-md-4  center">
+  <div class="col-md-6 col-sm-offset-3">
     
+<table class="table table-bordered">
+  <thead >
+    
+  </thead>
   
-  <div class="col-md-8">
-    <div class="well">
-      <strong>Nombre: </strong>
-      <%= @appuser.name %> <br>
-      
-      <strong>Apellido Paterno: </strong>
-      <%= @appuser.first_last_name %> <br>
-      
-      <strong>Apellido Materno: </strong>
-      <%= @appuser.second_last_name %> <br>
-      
-      <strong>LADA: </strong>
-      <%= @appuser.lada %> <br>
-      
-      <strong>Teléfono: </strong>
-      <%= @appuser.phone %> <br>
-      
-      <strong>Correo electrónico: </strong>
-      <%= @appuser.email %> <br>
-      
-      <strong>Modelo: </strong>
-      <%= @appuser.model %> <br>
-      
-      <strong>No. de Serie: </strong>
-      <%= @appuser.serial_number %> <br>
+  <tbody>
+      <tr>
+         <td class = "danger gross-border"> <strong>Nombre(s): </strong></td>
+         <td class="gross-border"><%= @appuser.name %></td>
+        </tr>
+        <tr>
+         <td class = "danger gross-border"> <strong>Apellido Paterno: </strong></td>
+         <td class="gross-border"><%= @appuser.first_last_name %></td>
+        </tr>
+        <tr>
+         <td class = "danger gross-border"> <strong>Apellido materno: </strong></td>
+         <td class="gross-border"><%= @appuser.second_last_name %></td>
+        </tr>
+       <tr>
+         <td class = "danger gross-border"> <strong>Teléfono de contacto: </strong></td>
+         <td class="gross-border"><%= @appuser.phone %></td>
+        </tr>
+        <tr>
+         <td class = "danger gross-border"> <strong>Correo electrónico: </strong></td>
+         <td class="gross-border"><%= @appuser.email %></td>
+        </tr>
+        <tr>
+         <td class = "danger gross-border"> <strong>Modelo del vehículo: </strong></td>
+         <td class="gross-border"><%= @appuser.model %></td>
+        </tr>
+        <tr>
+         <td class = "danger gross-border"> <strong>Número de serie: </strong></td>
+         <td class="gross-border"><%= @appuser.serial_number %></td>
+        </tr>
+   
+  </tbody>
   
-  </div>
+</table>
+<div class="pull-right">
+  
+<% if logged_in? and current_user.admin? %>
+      <%= link_to "[Eliminar cliente]", @appuser, method: :delete, data: {confirm: "¿Estás seguro?"} %>
+    <% end %>
 </div>
-
+</div>
+</div>
 <h5><%= link_to "Regresar a la Lista de Clientes", appusers_path, class:"btn btn-danger btn-small" %></h5>

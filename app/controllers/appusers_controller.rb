@@ -4,7 +4,7 @@ class AppusersController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def index
-    @appusers = Appuser.paginate(page: params[:page], per_page: 3)
+    @appusers = Appuser.all
   end
   
   def create

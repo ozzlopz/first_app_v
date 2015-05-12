@@ -34,6 +34,8 @@ gem 'bcrypt', '3.1.7'
 
 gem 'fog', '1.23.0'
 
+gem 'alphabetical_paginate'
+
 gem 'spring',        group: :development
 
 

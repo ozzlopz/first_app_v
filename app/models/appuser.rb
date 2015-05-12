@@ -9,4 +9,6 @@ class Appuser < ActiveRecord::Base
   validates :model, presence: true, length:{minimum:3,maximum:40}
   validates :serial_number, presence: true, length:{minimum:3,maximum:40}
   
+  default_scope -> {order(name: :asc)}
+  
 end
