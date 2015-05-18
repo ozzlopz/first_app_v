@@ -8,9 +8,18 @@
       <meta name="author" content="Vesparum Technologies">
       <title>Notificaciones Push</title>
       
-    
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="http://vespatechno.com/B1gUGwOK1z/contents/css/custom.css">
+
+      <!-- JQuery Calendar -->
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-   
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
    </head>
    <body>
       <div id="wrapper-no">
@@ -91,13 +100,9 @@
                                        </div>
                                        <div class="col-lg-6">
                                           <select class="form-control" id="filterType">
-                                             <option value="fcar">Por nombre del modelo de auto</option>
-                                             <option value="fcolor">Por color de auto</option>
+                                             <option value="fcar">Por modelo de auto</option>
                                              <option value="fname">Por nombre del usuario</option>
                                              <option value="fmail">Por correo electrónico del usuario</option>
-                                             <option value="fyears">Por rango de años del modelo de auto</option>
-                                             <option value="fservice">Por tipo de servicio obtenido</option>
-                                             <option value="freg">Por tipo de registro (clientes o no clientes)</option>
                                           </select>
                                        </div>
                                     </div>
@@ -112,6 +117,49 @@
                                  </div>
                               </div>
                               <!-- fin area de segmentos -->
+
+
+                            <!-- area opciones extra -->
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <h3 class="panel-title">Funciones Especiales</h3>
+                                 </div>
+                                 <div class="panel-body">
+                                    <!-- programar envio ? -->
+                                    <div class="form-group">
+                                       <label class="col-lg-3 control-label">¿La notificación incluye invitación a responder una encuesta de calidad?</label>
+                                       <div class="col-lg-9">
+                                          <div class="radio radio-primary">
+                                             <label>
+                                                <input type="radio" name="surveyRadio" value="N" onChange="onSurveyRadioChange()" checked>
+                                                No se incluye.
+                                             </label>
+                                          </div>
+                                          <div class="radio radio-primary">
+                                             <label>
+                                             <input type="radio" name="surveyRadio" value="Y" onChange="onSurveyRadioChange()">
+                                             Sí se incluye.
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <!-- enviar en -->
+                                    <div class="panel panel-info" id="survey_panel" style="display:nones">
+                                       <div class="panel-heading">
+                                          <h3 class="panel-title">Definir una nueva url para la encuesta</h3>
+                                       </div>
+                                       <div class="panel-body">
+                                          <!-- fecha -->
+                                          <div class="form-group">
+                                             <label for="inputUrl" class="col-lg-3 control-label">Url de la encuesta</label>
+                                             <div class="col-lg-9">
+                                                <input type="text" maxlength="60" class="form-control" id="inputUrl" placeholder="Ejemplo: http://goo.gl/forms/vQbXTfBneM">
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
 
                               <!-- area momento de envio -->
                               <div class="panel panel-default">
@@ -218,16 +266,9 @@
 
 
       <!-- jQuery Version 1.11.1 -->
-      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/jquery.js"></script>
-      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-      <!-- Bootstrap Core JavaScript -->
-      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/bootstrap.min.js"></script>
-      <!-- Material Design js -->
-      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/ripples.min.js"></script>
-      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/material.min.js"></script>
-      <!-- Load Menu -->
-      <!--script src="http://vespatechno.com/B1gUGwOK1z/contents/js/load_menu.js"></script-->
-      <!-- Calendar -->
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <!-- Psuh & Calendar -->
       <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/push.js"></script>
    </body>
 </html>

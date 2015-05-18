@@ -9,8 +9,10 @@ class AppusersController < ApplicationController
   
   def create
     @appuser = Appuser.create(appuser_params)
+    @appuser.car_id = @appuser.modelId
+    @appuser.save
   
-      render "client_confirmation"
+    render "client_confirmation"
   
   end
   
@@ -26,7 +28,7 @@ class AppusersController < ApplicationController
   
   private 
     def appuser_params
-      params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number)
+      params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number,:modelId)
     end
     
     def set_user

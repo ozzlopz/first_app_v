@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-   before_action :set_car, only: [:edit,:update,:show] 
+   before_action :set_car, only: [:edit,:update,:show,:showclients] 
    before_action :require_logged__user
    before_action :require_user
    before_action :admin_user, only: [:edit,:update]
@@ -11,6 +11,10 @@ class CarsController < ApplicationController
   
   def show
     @offers = @car.offers.paginate(page: params[:page], per_page: 4)
+  end
+  
+  def showclients
+    @appusers = @car.appusers
   end
   
   def new

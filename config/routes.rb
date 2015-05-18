@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     
     resources :cars 
     
+    get '/cars/:id/clients', to: "cars#showclients", as:'cars_clients'
+    
     resources :notifications
     get '/resumen_notificacion', to:'notifications#resumen_notificacion'
     

@@ -1,17 +1,11 @@
 <%= render 'shared/page_title', title: "Ofertas para: " +  @car.name %> 
 
 <ul class="nav nav-tabs">
-   <li>
-    <%= link_to "Ofertas", offers_path %>
+   <li class='active'>
+    <%= link_to "Ofertas", car_path %>
   </li>
   <li>
-    <%= link_to "Usuarios", users_path %>
-  </li>
-  <li class='active'>
-    <%= link_to "Categorías", cars_path %>
-  </li>
-   <li>
-    <%= link_to "Clientes", appusers_path %>
+    <%= link_to "Clientes", cars_clients_path(@car)%>
   </li>
 </ul>
 
