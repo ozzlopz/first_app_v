@@ -8,9 +8,9 @@ class AppusersController < ApplicationController
   end
   
   def create
-    @client = Appuser.find_by_email(appuser_email_params)
-    if @client
-      @client.update(appuser_params)
+    if Appuser.exists?(:email => params[:appuser][:email])
+      @appuser = Appuser.find_by_email(params[:appuser][:email])
+      @appuser.update(appuser_params)
     else  
     @appuser = Appuser.create(appuser_params)
     @appuser.car_id = @appuser.modelId
@@ -34,10 +34,6 @@ class AppusersController < ApplicationController
   private 
     def appuser_params
       params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number,:modelId)
-    end
-    
-    def appuser_email_params
-      params.require(:appuser).permit(:email)
     end
     
     def set_user
