@@ -10,14 +10,7 @@ class AppusersController < ApplicationController
   def create
     if Appuser.exists?(:email => params[:email])
       @appuser = Appuser.find_by_email(params[:email])
-      @appuser.name = params[:name]
-      @appuser.first_last_name = params[:first_last_name]
-      @appuser.second_last_name = params[:second_last_name]
-      @appuser.lada = params[:lada]
-      @appuser.phone = params[:phone]
-      @appuser.model = params[:model]
-      @appuser.serial_number = params[:serial_number]
-      @appuser.modelId = params[:modelId]
+      @appuser.update(appuser_params)
     else  
     @appuser = Appuser.create(appuser_params)
     end
