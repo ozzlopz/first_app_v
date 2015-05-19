@@ -8,10 +8,20 @@ class AppusersController < ApplicationController
   end
   
   def create
+    if Appuser.exists?(:email => params[:email])
+      @appuser.name = params[:name]
+      @appuser.first_last_name = params[:first_last_name]
+      @appuser.second_last_name = params[:second_last_name]
+      @appuser.lada = params[:lada]
+      @appuser.phone = params[:phone]
+      @appuser.model = params[:model]
+      @appuser.serial_number = params[:serial_number]
+      @appuser.modelId = params[:modelId]
+    else  
     @appuser = Appuser.create(appuser_params)
+    end
     @appuser.car_id = @appuser.modelId
     @appuser.save
-  
     render "client_confirmation"
   
   end
