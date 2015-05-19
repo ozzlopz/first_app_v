@@ -8,7 +8,7 @@ class AppusersController < ApplicationController
   end
   
   def create
-    @client = Appuser.find_by_email(params[:email])
+    @client = Appuser.find_by_email(params.require(:appuser).permit(:email))
     if @client
       @client.update(appuser_params)
     else  
