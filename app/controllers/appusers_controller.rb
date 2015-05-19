@@ -13,9 +13,10 @@ class AppusersController < ApplicationController
       @appuser.update(appuser_params)
     else  
     @appuser = Appuser.create(appuser_params)
-    end
     @appuser.car_id = @appuser.modelId
     @appuser.save
+    end
+    
     render "client_confirmation"
   
   end
