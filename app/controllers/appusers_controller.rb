@@ -8,8 +8,9 @@ class AppusersController < ApplicationController
   end
   
   def create
-    if Appuser.exists?(:email => params[:email])
-     
+    @client = Appuser.find_by_email(params[:email])
+    if @client
+      @client.update(appuser_params)
     else  
     @appuser = Appuser.create(appuser_params)
     @appuser.car_id = @appuser.modelId
