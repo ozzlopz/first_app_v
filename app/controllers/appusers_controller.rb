@@ -8,7 +8,7 @@ class AppusersController < ApplicationController
   end
   
   def create
-    if Appuser.exists?(:email => "ozzlopz@gmail.com")
+    if Appuser.exists?(:email => params[:email])
      
     else  
     @appuser = Appuser.create(appuser_params)
