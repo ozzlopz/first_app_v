@@ -3,7 +3,7 @@ class CarsController < ApplicationController
    before_action :require_logged__user
    before_action :require_user
    before_action :admin_user, only: [:edit,:update]
-   before_action :developer_user, only: [:new,:create,:destroy]
+   before_action :developer_user, only: [:new,:create,:edit,:update,:destroy]
    
   def index
     @cars = Car.paginate(page: params[:page], per_page: 4)
@@ -66,6 +66,7 @@ class CarsController < ApplicationController
     end
     
     def developer_user
+      flash[:danger] = "Para realizar esa acción debes tener una cuenta de desarrollador"
       redirect_to cars_path unless current_user.developer?
     end
     

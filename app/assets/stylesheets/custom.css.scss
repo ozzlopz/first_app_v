@@ -5,8 +5,18 @@ $navbar-default-color: $light-orange;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+.auto-width{
+  width:auto !important;
+}
+
 .gross-border{
   border: 1px solid #8c8c8c !important;
+}
+
+.gross-border-red{
+  border: 1px solid #bababa !important;
 }
 
 .charcount-number{
@@ -39,6 +49,10 @@ $navbar-default-color: $light-orange;
 
 .topmargin{
   margin-top:50px;
+}
+
+.topmargin10{
+  margin-top:10px;
 }
 
 .topborder{

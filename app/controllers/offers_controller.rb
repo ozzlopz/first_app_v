@@ -30,7 +30,7 @@ end
   def create
     @offer = Offer.new(recipe_params)
     @offer.user = current_user
-    
+    @offer.image_version = 0
     if @offer.save
       flash[:success] = "La oferta ha sido creada exitosamente"
       redirect_to offers_path
@@ -45,6 +45,8 @@ end
   
   def update
     if @offer.update(recipe_params)
+      @offer.image_version += 1
+      @offer.save;
       flash[:success] = "La oferta ha sido editada exitosamente"
       redirect_to offer_path(@offer)
     else
@@ -62,7 +64,7 @@ end
   private
   
     def recipe_params
-      params.require(:offer).permit(:name,:summary,:description,:picture,car_ids:[])
+      params.require(:offer).permit(:name,:summary,:description,:picture,:min_year,:max_year,:image_version,car_ids:[])
     end
     
     def set_offer

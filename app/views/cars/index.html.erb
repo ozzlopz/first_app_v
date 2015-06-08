@@ -24,7 +24,7 @@
   <br><br>
   <% if current_user.developer? %>
   <div class="row">
-    <div class="col-lg-offset-2 col-lg-4 well">
+    <div class="col-lg-offset-2 col-lg-4 well center">
      <%= link_to (new_car_path) do %>
         <div class="center">Nueva categoría <span class="glyphicon glyphicon-plus"></span></div>
      <% end %>
@@ -32,11 +32,11 @@
 
 <% @cars.each do |car| %>
   <div class="row">
-      <div class="col-lg-offset-2 col-lg-4 well">
+      <div class="col-lg-offset-4 col-lg-4 well center gross-border-red">
          <h4><%= link_to car.name, car_path(car) %></h4>
          <% if current_user.developer? %>
-         <div class="small pull-right"> &nbsp &nbsp &nbsp<%= link_to "Eliminar", car, method: :delete, data: {confirm: "¿Estás seguro?"} %></div><%end%>
-         <% if current_user.admin? %>
+         <div class="small pull-right"> &nbsp &nbsp &nbsp<%= link_to "Eliminar", car, method: :delete, data: {confirm: "¿Estás seguro?"} %></div>
+        
          <div class="small pull-right"><%= link_to "Editar",edit_car_path(car) %></div><%end%>
          
       </div>

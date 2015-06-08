@@ -42,8 +42,9 @@
          <h4><%= link_to offer.name, offer_path(offer) %></h4>
          <p><%= offer.summary %></p>
         <% if offer.cars.any? %>
-        <p>Publicado para: <%= render offer.cars %></p>
+        <p>Publicado para modelos: <%= render offer.cars %></p>
          <% end %>
+       
            <span class = "quiet">
              <small>
               creado: <%=time_ago_in_words(offer.created_at)%>, 
