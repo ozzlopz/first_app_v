@@ -22,7 +22,16 @@
       <%end%>
       <br><br>
       
-    
+       <%= f.label "Seleccionar años: " %>
+      &nbsp&nbsp&nbsp&nbsp<%=check_box_tag 'activate_years', 'no', false, class: 'auto-width', :onclick => "$('#yearsSelect')[this.checked ? 'show' : 'hide']();"%>
+      
+      <div id="yearsSelect" style="display: none">
+       <div class="topmargin10"><strong>Años del modelo:</strong> </strong><br>
+       <%= f.label "Desde: ", class: "topmargin10"%>
+       
+       &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.label "Hasta: " %>
+       
+      </div></div>
       <br><%= f.label :picture %>
       <span class="picture topmargin10">
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'%>
