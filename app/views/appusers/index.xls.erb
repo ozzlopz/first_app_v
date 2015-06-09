@@ -1,0 +1,27 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido Paterno</th>
+    <th>Apellido Materno</th>
+    <th>Teléfono de Contacto</th>
+    <th>Correo Electrónico</th>
+    <th>Modelo del Vehículo</th>
+    <th>Año del Vehículo</th>
+    <th>Número de Serie</th>
+  </tr>
+  
+  <% @appusers.each do |appuser| %>
+  <tr>
+    <td><%= appuser.id %></td>
+    <td><%= appuser.name %></td>
+    <td><%= appuser.first_last_name %></td>
+    <td><%= appuser.second_last_name %></td>
+    <td><%= "("+appuser.lada+")"+appuser.phone %></td>
+    <td><%= appuser.email %></td>
+    <td><%= appuser.model %></td>
+    <td><%= appuser.year %></td>
+    <td><%= raw appuser.serial_number %></td>
+  </tr>
+  <% end %>
+</table>

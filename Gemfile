@@ -36,6 +36,10 @@ gem 'fog', '1.23.0'
 
 gem 'alphabetical_paginate'
 
+gem 'axlsx_rails'
+
+gem 'acts_as_xlsx'
+
 gem 'spring',        group: :development
 
 

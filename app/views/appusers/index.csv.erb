@@ -1,0 +1,5 @@
+<%- headers = ['Nombre','Apellido Paterno','Apellido Materno','Teléfono de Contacto','Correo Electrónico','Apellido Paterno','Modelo del Vehículo','Año del Vehículo','Número de Serie'] -%>
+<%= CSV.generate_line headers %>
+<%- @appusers.each do |appuser| -%>
+  <%= CSV.generate_line([raw appuser.name,raw appuser.first_last_name,raw appuser.second_last_name,raw "("+appuser.lada+")"+appuser.phone,raw appuser.email,raw appuser.model,raw appuser.year,raw appuser.serial_number]) %>
+<%- end -%>

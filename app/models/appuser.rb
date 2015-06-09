@@ -1,4 +1,6 @@
 class Appuser < ActiveRecord::Base
+  
+  acts_as_xlsx
 
   validates :name, presence: true, length:{minimum:3,maximum:40}
   validates :first_last_name, presence: true, length:{minimum:3,maximum:40}
@@ -11,6 +13,16 @@ class Appuser < ActiveRecord::Base
   
   belongs_to :car
   
-  default_scope -> {order(model: :asc)}
   
+ 
+  
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |appuser|
+        csv <<  appuser.attributes.values_at(*column_names)
+      end
+    end
+  end
+   default_scope -> {order(model: :asc)}
 end
