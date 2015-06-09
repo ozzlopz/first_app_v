@@ -16,14 +16,17 @@
        <div class="pull-right"><span class="small charcount-number" id="char-count-description"></span></div><br><br>
        
 
-      <strong>Publicar para:</strong> </strong>
+      
+      
+        <strong>Publicar para:</strong> </strong>
+        <div style="width:500px;left:15px">
       <%= f.collection_check_boxes :car_ids, Car.all,:id,:name do |cbi| %>
         <% cbi.label(class:"checkbox-inline input_checkbox"){ cbi.check_box(class:"checkbox") + cbi.text} %>
       <%end%>
       <br><br>
-      
+      </div>
        <%= f.label "Seleccionar años: " %>
-      &nbsp&nbsp&nbsp&nbsp<%=check_box_tag 'activate_years', 'no', false, class: 'auto-width', :onclick => "$('#yearsSelect')[this.checked ? 'show' : 'hide']();"%>
+      &nbsp&nbsp&nbsp&nbsp<%= f.check_box :hasyears, class: 'auto-width', :onclick => "$('#yearsSelect')[this.checked ? 'show' : 'hide']();"%>
       
       <div id="yearsSelect" style="display: none">
        <div class="topmargin10"><strong>Años del modelo:</strong> </strong><br>

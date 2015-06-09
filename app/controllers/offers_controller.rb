@@ -64,7 +64,7 @@ end
   private
   
     def recipe_params
-      params.require(:offer).permit(:name,:summary,:description,:picture,:min_year,:max_year,:image_version,car_ids:[])
+      params.require(:offer).permit(:name,:summary,:description,:picture,:hasyears,:min_year,:max_year,:image_version,car_ids:[])
     end
     
     def set_offer
