@@ -26,14 +26,14 @@
       <br><br>
       </div>
        <%= f.label "Seleccionar años: " %>
-      &nbsp&nbsp&nbsp&nbsp<%= f.check_box :hasyears, class: 'auto-width', :onclick => "$('#yearsSelect')[this.checked ? 'show' : 'hide']();"%>
+      &nbsp&nbsp&nbsp&nbsp<%= f.check_box :hasyears, class: 'auto-width', :id => "selectedYears", :onclick => "$('#yearsSelect')[this.checked ? 'show' : 'hide']();"%>
       
-      <div id="yearsSelect" style="display: none">
+      <div id="yearsSelect">
        <div class="topmargin10"><strong>Años del modelo:</strong> </strong><br>
        <%= f.label "Desde: ", class: "topmargin10"%>
-       <%= f.select :min_year, options_for_select([['2000','2000'],['2001','2001'],['2002','2002'],['2003','2003'],['2004','2004'],['2005','2005'],['2006','2006'],['2007','2007'],['2008','2008'],['2009','2009'],['2010','2010'],['2011','2011'],['2012','2012'],['2013','2013'],['2014','2014'],['2015','2015'],['2016','2016']]), {}, {autofocus: 'true', class: 'auto-width'}%>
+       <%= f.select :min_year, options_for_select([['2000','2000'],['2001','2001'],['2002','2002'],['2003','2003'],['2004','2004'],['2005','2005'],['2006','2006'],['2007','2007'],['2008','2008'],['2009','2009'],['2010','2010'],['2011','2011'],['2012','2012'],['2013','2013'],['2014','2014'],['2015','2015'],['2016','2016']],@offer.min_year), {}, {class: 'auto-width'}%>
        &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.label "Hasta: " %>
-       <%= f.select :max_year, options_for_select([['2000','2000'],['2001','2001'],['2002','2002'],['2003','2003'],['2004','2004'],['2005','2005'],['2006','2006'],['2007','2007'],['2008','2008'],['2009','2009'],['2010','2010'],['2011','2011'],['2012','2012'],['2013','2013'],['2014','2014'],['2015','2015'],['2016','2016']]), {}, {autofocus: 'true', class: 'auto-width'}%>
+       <%= f.select :max_year, options_for_select([['2000','2000'],['2001','2001'],['2002','2002'],['2003','2003'],['2004','2004'],['2005','2005'],['2006','2006'],['2007','2007'],['2008','2008'],['2009','2009'],['2010','2010'],['2011','2011'],['2012','2012'],['2013','2013'],['2014','2014'],['2015','2015'],['2016','2016']],@offer.max_year), {}, {class: 'auto-width'}%>
       </div></div>
       <br><%= f.label :picture %>
       <span class="picture topmargin10">
@@ -46,6 +46,8 @@
   </div>
   
    <script type="text/javascript">
+    window.onload = check_selectedYears();
+   
     $('#offer_picture').bind('change',function(){
       size_in_megabytes = this.files[0].size/1024/1024;
       if(size_in_megabytes > 0.25){
@@ -87,5 +89,13 @@
     else
       $("#char-count-description").css('color', 'red');
     }); 
+    
+     function check_selectedYears(){
+       var boxYears = document.getElementById("selectedYears")
+       
+      $("#yearsSelect")[boxYears.checked ? 'show' : 'hide']();
+    }
+    
+   
 
   </script>

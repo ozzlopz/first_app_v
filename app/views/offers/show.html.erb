@@ -41,7 +41,12 @@
     </div>
     <div class="well">
        <% if @offer.cars.any? %>
-       <p>Publicada para: <%= render @offer.cars %></p>
+       <p>Publicada para modelos: <%= render @offer.cars %></p>
+       <%end%>
+       <% if @offer.hasyears %>
+       <p>Publicada para vehículos de años: <%= @offer.min_year.to_s + " a " + @offer.max_year.to_s%></p>
+       <%else%>
+       <p>Publicada para vehículos de cualquier año</p>
        <% end %>
       <strong>Descripción de la oferta: </strong>
       </p>
