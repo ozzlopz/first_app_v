@@ -55,7 +55,7 @@ class AppusersController < ApplicationController
   
   private 
     def appuser_params
-      params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number,:modelId)
+      params.require(:appuser).permit(:name,:first_last_name,:second_last_name,:lada,:phone,:email,:model,:serial_number,:modelId,:year)
     end
     
     def set_user
