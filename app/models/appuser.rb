@@ -17,5 +17,5 @@ class Appuser < ActiveRecord::Base
       end
     end
   end
-   default_scope -> {order(model: :asc)}
+   default_scope -> {order(modelId: :asc)}
 end
