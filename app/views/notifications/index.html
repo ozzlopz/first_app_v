@@ -11,8 +11,12 @@
       <!-- Custom CSS -->
       <link rel="stylesheet" href="http://vespatechno.com/B1gUGwOK1z/contents/css/custom.css">
 
+      <!-- Custom Admin CSS -->
+      <link rel="stylesheet" href="http://vespatechno.com/B1gUGwOK1z/contents/css/sb-admin.css">
+
       <!-- JQuery Calendar -->
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,22 +26,23 @@
       <![endif]-->
    </head>
    <body>
-      <div id="wrapper-no">
+      <div id="wrapper">
          <!-- NAV LOADED DINAMICALLY -->
          <div id="dynamic-container">
             <!-- NEW CONTENT LOADS HERE-->
          </div>
+         
       <!-- end navbar -->
          <div id="page-wrapper">
             <div class="container-fluid">
                <!-- Page Heading -->
                <div class="row">
                   <div class="col-lg-12">
-                     <h1 class="page-header">
+                     <h2 class="page-header">
                         Envío de Notificaciones Push
-                     </h1>
+                     </h2>
                      <br>
-                     <h2>Crear una nueva notificación</h2>
+                     <h3>Crear una nueva notificación</h3>
                      <!--subtitle>Para un grupo de usuarios en específico</subtitle-->
                   </div>
                </div>
@@ -46,7 +51,7 @@
                   <div class="col-lg-9">
                      <div class="well">
                         <div id="alerts_container">
-                           <div class="alert alert-dismissable alert-success">
+                           <div class="alert alert-dismissable alert-success" style="display:none">
                               <button type="button" class="close" data-dismiss="alert">×</button>
                               <i class="mdi-action-done"></i>
                               <p>Oh snap! Change a few things up and try submitting again.</p>
@@ -95,14 +100,16 @@
                                           <p class="text-muted">Pueden agregarse filtros para segmentar el grupo de usuarios a los que se enviará la notificación. Si no hay ningún filtro agregado, ésta se enviará a <strong>todos los usuarios de la aplicación</strong>.</p><br>
                                        </div>
 
-                                       <div class="col-lg-3">
-                                          <a id="new_filter_btn" class="btn btn-primary">Agregar filtro</a>
+                                       <div class="col-lg-2">
+                                          <a id="new_filter_btn" class="btn btn-primary">Elegir filtro</a>
                                        </div>
                                        <div class="col-lg-6">
                                           <select class="form-control" id="filterType">
                                              <option value="fcar">Por modelo de auto</option>
-                                             <option value="fname">Por nombre del usuario</option>
-                                             <option value="fmail">Por correo electrónico del usuario</option>
+                                             <option value="fyears">Por rango de años de auto</option>
+                                             <option value="fcar_years">Por modelo de auto y rango de años</option>
+                                             <option value="fname">Por nombre(s) de usuario</option>
+                                             <option value="fmail">Por correo(s) electrónico(s) de usuario</option>
                                           </select>
                                        </div>
                                     </div>
@@ -144,16 +151,43 @@
                                        </div>
                                     </div>
                                     <!-- enviar en -->
-                                    <div class="panel panel-info" id="survey_panel" style="display:nones">
+                                    <div class="panel panel-info" id="survey_panel">
                                        <div class="panel-heading">
-                                          <h3 class="panel-title">Definir una nueva url para la encuesta</h3>
+                                          <h3 class="panel-title">Definir url para la encuesta</h3>
                                        </div>
                                        <div class="panel-body">
-                                          <!-- fecha -->
+
+                                           <!-- elegir encuesta -->
                                           <div class="form-group">
-                                             <label for="inputUrl" class="col-lg-3 control-label">Url de la encuesta</label>
+                                             <label class="col-lg-3 control-label">Url a utilizar</label>
                                              <div class="col-lg-9">
-                                                <input type="text" maxlength="60" class="form-control" id="inputUrl" placeholder="Ejemplo: http://goo.gl/forms/vQbXTfBneM">
+                                                <div class="radio radio-primary">
+                                                   <label>
+                                                      <input type="radio" name="surveyUrl" value="0" onChange="onSurveyUrlPick()" checked>
+                                                      Servicio <!--b>(http://goo.gl/forms/vQbXTfBneM)</b-->
+                                                   </label>
+                                                </div>
+
+                                                <div class="radio radio-primary">
+                                                   <label>
+                                                   <input type="radio" name="surveyUrl" value="1" onChange="onSurveyUrlPick()">
+                                                   Ventas <!--b>(http://goo.gl/forms/Y8oROYyT0k)</b-->
+                                                   </label>
+                                                </div>
+
+                                                 <div class="radio radio-primary">
+                                                   <label>
+                                                   <input type="radio" name="surveyUrl" value="2" onChange="onSurveyUrlPick()">Url nueva</label>
+                                                </div>
+
+                                             </div>
+                                          </div>
+                                           
+                                           <!-- url dinamica -->
+                                          <div class="form-group">
+                                             <label for="inputUrl" class="col-lg-3 control-label"><i>Url nueva:</i></label>
+                                             <div class="col-lg-8">
+                                                <input type="text" maxlength="60" class="form-control" id="inputUrl" placeholder="Ejemplo: http://goo.gl/forms/vQbXTfBneM" disabled>
                                              </div>
                                           </div>
                                        </div>
@@ -268,7 +302,9 @@
       <!-- jQuery Version 1.11.1 -->
       <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
       <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-      <!-- Psuh & Calendar -->
+      <!-- Push & Calendar -->
       <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/push.js"></script>
+      <!-- Load Menu -->
+      <script src="http://vespatechno.com/B1gUGwOK1z/contents/js/load_menu.js"></script>
    </body>
 </html>
