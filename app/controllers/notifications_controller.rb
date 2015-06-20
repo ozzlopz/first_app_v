@@ -10,6 +10,10 @@ class NotificationsController < ApplicationController
   
  end
  
+ def enviadas
+  
+ end
+ 
  def require_logged__user
   if !logged_in?
    flash[:danger] = "Para realizar esa acción debes tener una sesión iniciada"
