@@ -1,5 +1,6 @@
 class AppusersController < ApplicationController
   require 'axlsx'
+  before_action :require_logged__user, only: :index
   before_action :set_user, only: :show
   skip_before_action :verify_authenticity_token
   
